@@ -15,6 +15,7 @@ app.set('view engine', 'ejs')
 app.get('/', (req, res) => {
   res.render('index')
 })
+app.use(express.static(__dirname + '/views'));
 
 let badwords;
 fs.readFile("familyFriendly.csv", function(error, data) {
